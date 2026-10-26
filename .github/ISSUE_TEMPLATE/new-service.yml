@@ -1,0 +1,43 @@
+name: New service
+description: An API you want to connect that does not work yet, or works poorly.
+labels: [new service]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste API keys, tokens, key-entry links, API responses, or customer data.**
+  - type: input
+    id: service
+    attributes:
+      label: Service
+      placeholder: Wildberries, Ozon, amoCRM, ...
+    validations:
+      required: true
+  - type: input
+    id: documentation
+    attributes:
+      label: Link to the official API documentation
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: tasks
+    attributes:
+      label: What you want your assistant to do with it
+      description: For example "show yesterday's orders" or "change prices of these products".
+    validations:
+      required: true
+  - type: textarea
+    id: what-went-wrong
+    attributes:
+      label: What happened when you tried
+      description: Leave empty if you have not tried yet. The documentation may be blocked for automated readers, need a sign-in, or describe the keys in an unusual way.
+  - type: dropdown
+    id: auth
+    attributes:
+      label: How the service gives you keys
+      options:
+        - An API key or token I copy from my account
+        - A client ID and secret
+        - Sign-in through OAuth
+        - I do not know

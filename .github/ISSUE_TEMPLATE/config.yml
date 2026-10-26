@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/A1exZabr/apiunicon/security/advisories/new
+    about: Report vulnerabilities privately, never in a public issue. See SECURITY.md for the email option.
+  - name: Want to send a pull request?
+    url: https://github.com/A1exZabr/apiunicon/blob/main/CONTRIBUTING.md
+    about: We accept issues only for now; pull requests are closed. CONTRIBUTING.md explains why and what helps instead.

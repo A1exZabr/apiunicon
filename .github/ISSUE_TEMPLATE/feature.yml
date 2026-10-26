@@ -1,0 +1,26 @@
+name: Feature request
+description: An idea or a change in how APIUniCon works.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the idea. For a new API to support, use the **New service** template instead.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: What you are trying to do and what gets in the way today.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: How it could work, from your point of view.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead

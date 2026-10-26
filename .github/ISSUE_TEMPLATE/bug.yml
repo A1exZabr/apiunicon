@@ -1,0 +1,57 @@
+name: Bug report
+description: Something does not work as described.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. **Never paste API keys, tokens, passwords, key-entry or confirmation links, API responses, or customer data.** Replace real values with placeholders such as `<token>`.
+        Security problems go through [SECURITY.md](https://github.com/A1exZabr/apiunicon/blob/main/SECURITY.md), not here.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start APIUniCon with npm run dev
+        2. Ask the assistant to ...
+        3. ...
+    validations:
+      required: true
+  - type: dropdown
+    id: assistant
+    attributes:
+      label: AI assistant
+      options:
+        - Claude Code
+        - Claude Desktop
+        - ChatGPT
+        - Codex
+        - Other MCP client
+        - Not related to an assistant
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Operating system and Node.js version
+      placeholder: macOS 15.5, Node.js 22.20.0
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: APIUniCon version
+      description: The commit you run (git rev-parse --short HEAD) or the release date.
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error messages
+      description: Remove any keys, tokens, links, and customer data first.
+      render: text
