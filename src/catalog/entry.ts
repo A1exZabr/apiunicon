@@ -62,8 +62,8 @@ const VISIBLE = /[^\p{White_Space}\p{Z}\p{C}\p{M}\p{Default_Ignorable_Code_Point
 // - delete_not_destructive: a DELETE is always a deletion, so it carries the "destructive" label;
 // - read_unsafe_method: the runtime lets a "read" run without asking, and its effective risk makes a "read" PUT, PATCH
 //   or DELETE a change, so a "read" label on one would let a catalog author act with the person's key. The rule is the
-//   runtime's own effectiveRisk, so the two cannot drift apart. POST stays allowed as a read: some services
-//   (Wildberries, Ozon) read through POST;
+//   runtime's own effectiveRisk, so the two cannot drift apart. POST stays allowed as a read: GraphQL APIs, and
+//   the search and report endpoints of many others, read through POST;
 // - undescribed_write_input: the person confirms a change by reading its values on a page, and each value is named by
 //   its input's description, so a change with an unnamed value is not shown whole. A description of blanks names nothing.
 export type CatalogOperationProblem = "get_not_read" | "delete_not_destructive" | "read_unsafe_method" | "undescribed_write_input";
@@ -120,7 +120,7 @@ export function catalogLookupUrl(documentationUrl: string): string | null {
   }
 }
 
-// "Wildberries Statistics" -> "wildberries-statistics"; a name without Latin letters falls back to the domain.
+// "Allegro Sales" -> "allegro-sales"; a name without Latin letters falls back to the domain.
 export function catalogSlug(entry: Pick<CatalogEntry, "displayName" | "domain">): string {
   const slugify = (value: string) =>
     value.toLocaleLowerCase("en-US").replace(/[^a-z0-9]+/gu, "-").slice(0, 80).replace(/^-+|-+$/gu, "");

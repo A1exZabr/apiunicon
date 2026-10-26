@@ -4,7 +4,7 @@ export type EffectiveRisk = "read" | "write" | "destructive";
 
 // Where the method is unambiguous it decides, so a mislabelled operation (a model's mistake, or a hint in someone
 // else's documentation) cannot send a DELETE, PUT or PATCH without the person's confirmation. POST keeps its label:
-// some APIs, such as Wildberries and Ozon, read through POST. Such a read runs only once the person approved it
+// GraphQL APIs, and the search and report endpoints of many others, read through POST. Such a read runs only once the person approved it
 // (readsThroughPost).
 export function effectiveRisk(operation: Pick<AdapterOperation, "risk" | "method">): EffectiveRisk {
   if (operation.method === "DELETE") return "destructive";

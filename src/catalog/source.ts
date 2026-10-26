@@ -9,7 +9,7 @@ export type CatalogEntry = {
   version: number;
   displayName: string;
   description: string;
-  // The registrable domain, for example wildberries.ru.
+  // The registrable domain, for example allegro.pl.
   domain: string;
   // Already without the operations dropped on publication.
   dsl: AdapterDsl;

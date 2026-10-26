@@ -10,7 +10,7 @@ body:
     id: service
     attributes:
       label: Service
-      placeholder: Wildberries, Ozon, amoCRM, ...
+      placeholder: Allegro, Kommo, Packeta, ...
     validations:
       required: true
   - type: input

@@ -43,7 +43,7 @@ export function sameRegistrableDomain(left: string, right: string): boolean {
   return leftDomain !== null && leftDomain === registrableDomain(right);
 }
 
-// "https://dev.wildberries.ru/docs" -> "Wildberries": a readable service name when the documents disagree on one.
+// "https://developer.allegro.pl/documentation" -> "Allegro": a readable service name when the documents disagree on one.
 export function serviceNameFromDomain(url: string): string | null {
   const name = registrableDomain(url)?.split(".")[0];
   return name ? name.charAt(0).toLocaleUpperCase("en-US") + name.slice(1) : null;
