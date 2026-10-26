@@ -1,10 +1,27 @@
-# APIUniCon
+<p align="center">
+  <a href="https://apiunicon.online"><img src="docs/assets/apiunicon-banner.svg" alt="APIUniCon: ask ChatGPT or Claude about your own business" width="100%"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/A1exZabr/apiunicon/actions/workflows/ci.yml"><img src="https://github.com/A1exZabr/apiunicon/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-PolyForm%20Shield%201.0-00D6B4" alt="License: PolyForm Shield 1.0"></a>
+  <img src="https://img.shields.io/badge/node-%E2%89%A522.19-339933" alt="Node.js 22.19 or later">
+  <a href="https://modelcontextprotocol.io"><img src="https://img.shields.io/badge/MCP-server-05070F" alt="MCP server"></a>
+</p>
+
+<p align="center">
+  <a href="https://apiunicon.online"><b>Website</b></a> ·
+  <a href="https://apiunicon.online/pricing"><b>Cloud and pricing</b></a> ·
+  <a href="https://apiunicon.online/blog">Blog</a> ·
+  <a href="#по-русски">По-русски</a>
+</p>
 
 APIUniCon connects your AI assistant (Claude, ChatGPT, Codex, or another MCP client) to the API of a service you use. You give the assistant a link to the service's API documentation. APIUniCon turns it into a small, checked adapter, keeps your keys encrypted on your computer, and sends requests only to the addresses you approved. The assistant never sees your keys, and it cannot change your data without your confirmation unless you allow it.
 
-This repository is the local version: it runs on your own computer, and your keys stay there. The same product also runs as a cloud service, see [Cloud version](#cloud-version).
+> [!TIP]
+> **Don't want to run it yourself?** [APIUniCon Cloud](https://apiunicon.online) is the same product, already running: nothing to install or keep up to date, and it works in Claude and ChatGPT on any device, your phone included. One service is free, and Pro is $10 a month. [See pricing →](https://apiunicon.online/pricing)
 
-[По-русски](#по-русски)
+This repository is the local version: it runs on your own computer, and your keys stay there. The same product also runs as a cloud service, see [Cloud version](#cloud-version).
 
 ## Who it is for
 
@@ -136,6 +153,8 @@ The cloud follows the language of the system: a Russian locale (`LC_ALL`, `LC_ME
 
 APIUniCon also runs as a hosted service at [apiunicon.online](https://apiunicon.online) and, for Russia, [apiunicon.ru](https://apiunicon.ru). You add it to Claude or ChatGPT as a remote connector, and key-entry and confirmation links open on any device, including a phone. The cloud's own code is not in this repository.
 
+One service with 1,000 calls a month is free. Pro is $10 a month ($84 a year) for 10 services, and Business is $35 a month ($300 a year) for 50. See [pricing](https://apiunicon.online/pricing).
+
 ## Configuration
 
 None of this is needed for normal use. Export a variable before `npm run dev`, or use `.env.example` as a template for your shell:
@@ -195,6 +214,9 @@ This is a source-available license, not an OSI-approved open-source one. The API
 ## По-русски
 
 APIUniCon подключает вашего ИИ-ассистента (Claude, ChatGPT, Codex или другой MCP-клиент) к API сервиса, которым вы пользуетесь. Вы даёте ассистенту ссылку на документацию API. APIUniCon превращает её в небольшой проверенный адаптер, хранит ваши ключи зашифрованными на вашем компьютере и отправляет запросы только на адреса, которые вы одобрили. Ассистент никогда не видит ключей и не может изменить ваши данные без вашего подтверждения, если вы сами этого не разрешили.
+
+> [!TIP]
+> **Не хотите ставить у себя?** [Облачная версия](https://apiunicon.ru) — тот же APIUniCon, уже запущенный: ничего не нужно устанавливать и обновлять, и он работает в Claude и ChatGPT на любом устройстве, включая телефон. Один сервис бесплатно, Pro — 590 ₽ в месяц. [Тарифы →](https://apiunicon.ru/pricing)
 
 Этот репозиторий — локальная версия: она работает на вашем компьютере, и ключи остаются на нём. Есть и облачная версия, см. [Облачная версия](#облачная-версия).
 
@@ -290,6 +312,8 @@ Claude Code ещё и выполняет команды и читает файл
 
 APIUniCon работает и как облачный сервис: [apiunicon.online](https://apiunicon.online) и для России [apiunicon.ru](https://apiunicon.ru). Его добавляют в Claude или ChatGPT как удалённый коннектор, и ссылки для ключей и подтверждений открываются на любом устройстве, в том числе на телефоне. Код самого облака в этот репозиторий не входит.
 
+Один сервис и 1 000 запросов в месяц бесплатно. Pro — 590 ₽ в месяц (4 990 ₽ за год) за 10 сервисов, Business — 2 490 ₽ в месяц (20 990 ₽ за год) за 50. [Тарифы](https://apiunicon.ru/pricing).
+
 ### Разработка и безопасность
 
 Команды для разработки и подробная модель безопасности — в английской части. Коротко: граница защиты — MCP-интерфейс. Все гарантии здесь (ассистент не видит ключей, изменения и чтение через POST ждут вас, ссылкам нужен вход) действуют для ассистента, который работает с APIUniCon только через его инструменты. Ассистент с доступом к командам или файлам от вашего пользователя, например Claude Code или Codex CLI, может прочитать `~/.apiunicon` — мастер-ключ, базу, а значит и все ключи, и токен MCP — и обойти их. Не давайте такому ассистенту доступ к этой папке: закройте `~/.apiunicon` в его песочнице или настройках разрешений либо запускайте его от другого пользователя; правило, которое лишь сверяет текст команд оболочки, надёжно не защищает. Ассистент, который управляет браузером или экраном (расширение браузера, computer use, Playwright MCP), может сам открыть свои ссылки в браузере, где вы вошли, и нажать там кнопки, поэтому не давайте таким инструментам доступа к рабочему месту на `http://127.0.0.1:3210`. Дальше: APIUniCon слушает только адрес loopback и отвечает только этому компьютеру и только на заголовок `Host` с адресом loopback и своим портом; пароль администратора задаётся только по одноразовой ссылке настройки; запросы, которые что-то меняют, с другого сайта отклоняются; после 5 неверных паролей вход блокируется на минуту, и каждая следующая ошибка удваивает блокировку, до часа; **Lock workspace** завершает все сеансы. Правки (pull requests) пока не принимаем, только issues, см. [CONTRIBUTING.md](CONTRIBUTING.md). Об уязвимостях сообщайте закрыто, как описано в [SECURITY.md](SECURITY.md): через Private vulnerability reporting на GitHub или письмом на support@apiunicon.online с темой «Security».
@@ -304,3 +328,15 @@ APIUniCon работает и как облачный сервис: [apiunicon.o
 - Гарантий нет.
 
 Это лицензия с открытым кодом, но не open source в смысле OSI. Название и логотип APIUniCon — знаки Zabsoft LLC, лицензия на код их не передаёт, см. [TRADEMARKS.md](TRADEMARKS.md).
+
+---
+
+<p align="center">
+  <sub>Powered by</sub><br>
+  <a href="https://zabsoft.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/zabsoft-logo-light.svg">
+      <img src="docs/assets/zabsoft-logo-dark.svg" alt="ZabSoft" height="32">
+    </picture>
+  </a>
+</p>
