@@ -3,6 +3,16 @@
 </p>
 
 <p align="center">
+  <sub>Powered by</sub><br>
+  <a href="https://zabsoft.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/zabsoft-logo-light.svg">
+      <img src="docs/assets/zabsoft-logo-dark.svg" alt="ZabSoft" height="28">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
   <a href="https://github.com/A1exZabr/apiunicon/actions/workflows/ci.yml"><img src="https://github.com/A1exZabr/apiunicon/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-PolyForm%20Shield%201.0-00D6B4" alt="License: PolyForm Shield 1.0"></a>
   <img src="https://img.shields.io/badge/node-%E2%89%A522.19-339933" alt="Node.js 22.19 or later">
@@ -328,15 +338,3 @@ APIUniCon работает и как облачный сервис: [apiunicon.o
 - Гарантий нет.
 
 Это лицензия с открытым кодом, но не open source в смысле OSI. Название и логотип APIUniCon — знаки Zabsoft LLC, лицензия на код их не передаёт, см. [TRADEMARKS.md](TRADEMARKS.md).
-
----
-
-<p align="center">
-  <sub>Powered by</sub><br>
-  <a href="https://zabsoft.com">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="docs/assets/zabsoft-logo-light.svg">
-      <img src="docs/assets/zabsoft-logo-dark.svg" alt="ZabSoft" height="32">
-    </picture>
-  </a>
-</p>
